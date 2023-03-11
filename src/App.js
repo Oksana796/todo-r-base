@@ -32,7 +32,16 @@ function App() {
       <div>
         <ul>
           {list.map(({ id, item }) => (
-            <li key={id}>{item}</li>
+            <li key={id}>
+              {item}
+              <button
+                onClick={() => {
+                  setList(list.filter((task) => task.id !== id));
+                }}
+              >
+                Delete
+              </button>
+            </li>
           ))}
         </ul>
       </div>
